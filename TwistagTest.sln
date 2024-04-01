@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistagTest.App", "src\TwistagTest.App\TwistagTest.App.csproj", "{86A12E72-6732-41A8-84B1-0B044DE8DFE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwistagTest.App", "src\TwistagTest.App\TwistagTest.App.csproj", "{86A12E72-6732-41A8-84B1-0B044DE8DFE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistagTest.Data", "src\TwistagTest.Data\TwistagTest.Data.csproj", "{082F8270-60A2-41B3-877D-DDAAE8B055CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistagTest.Business", "src\TwistagTest.Business\TwistagTest.Business.csproj", "{C6FD7732-0FA9-4043-AE7A-801A4BFB1AD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistagTest.Api", "src\TwistagTest.Api\TwistagTest.Api.csproj", "{04344816-F48F-4140-8755-AF4905831350}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistagTest.Shared", "TwistagTest.Shared\TwistagTest.Shared.csproj", "{9E508785-2D0C-4502-AF90-1D8047B90B44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{86A12E72-6732-41A8-84B1-0B044DE8DFE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86A12E72-6732-41A8-84B1-0B044DE8DFE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86A12E72-6732-41A8-84B1-0B044DE8DFE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{082F8270-60A2-41B3-877D-DDAAE8B055CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{082F8270-60A2-41B3-877D-DDAAE8B055CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{082F8270-60A2-41B3-877D-DDAAE8B055CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{082F8270-60A2-41B3-877D-DDAAE8B055CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6FD7732-0FA9-4043-AE7A-801A4BFB1AD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6FD7732-0FA9-4043-AE7A-801A4BFB1AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6FD7732-0FA9-4043-AE7A-801A4BFB1AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6FD7732-0FA9-4043-AE7A-801A4BFB1AD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04344816-F48F-4140-8755-AF4905831350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04344816-F48F-4140-8755-AF4905831350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04344816-F48F-4140-8755-AF4905831350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04344816-F48F-4140-8755-AF4905831350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E508785-2D0C-4502-AF90-1D8047B90B44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E508785-2D0C-4502-AF90-1D8047B90B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E508785-2D0C-4502-AF90-1D8047B90B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E508785-2D0C-4502-AF90-1D8047B90B44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

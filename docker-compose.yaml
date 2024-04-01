@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:    
+  sql_server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Twistgag112358.#"
+    ports:
+      - 1433:1433
+    container_name: twistag_sql_server_1
+    hostname: twistag_sql_server_1
+    restart: unless-stopped
+    volumes:
+      - mssql-db-vol:/var/opt/mssql   # Mount a volume to persist SQL Server data
+    
+networks:
+  default:
+    external:
+      name: twistag-network
+
+volumes:
+  mssql-db-vol:
