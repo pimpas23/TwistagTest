@@ -1,0 +1,24 @@
+﻿@using TwistagTest.Shared.Models
+<div class="col">
+    <div class="card rounded-3 employee-card">
+        <div class="card-header py-3">
+            <h4>@Employee.FirstName @Employee.LastName</h4>
+       </div>
+       <div class="card-body employee-card text-center">
+           <button class="btn btn-outline-primary"
+                    @onclick="@(async () => await EmployeeQuickViewClicked.InvokeAsync(Employee))">
+                Quick View
+            </button>
+           <a href="@($"employeedetail/{Employee.Id}")" class="btn btn-outline-primary">Details</a>
+       </div>
+    </div>
+</div>
+        
+
+@code {
+    [Parameter]
+    public Employee Employee { get; set; } = default!;
+
+    [Parameter]
+    public EventCallback<Employee> EmployeeQuickViewClicked { get; set; }
+}

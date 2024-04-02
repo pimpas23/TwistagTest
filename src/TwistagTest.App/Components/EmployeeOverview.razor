@@ -1,0 +1,41 @@
+﻿@page "/employeeoverview"
+@using TwistagTest.App.Models
+@using TwistagTest.Shared.Models
+
+<h2>Employee Overview</h2>
+
+@if(Employees == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <QuickViewPopup Employee="_selectedEmployee"></QuickViewPopup>
+    <div class="row">
+        @foreach (var employee in Employees)
+        {
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                <ChildContent>
+                    <EmployeeCard Employee="employee" EmployeeQuickViewClicked="ShowQuickViewPopup"></EmployeeCard>
+                </ChildContent>
+            </div>
+        }
+    </div>
+}
+
+
+@code {
+    public List<Employee>? Employees { get; set; } = default!;
+    private Employee? _selectedEmployee;
+
+    protected override void OnInitialized()
+    {
+        Employees = MockDataService.Employees;
+    }
+
+    public void ShowQuickViewPopup(Employee selectedEmployee)
+    {
+        _selectedEmployee = selectedEmployee;
+        Console.WriteLine($"ShowQuickViewPopup + {_selectedEmployee.FirstName}");
+    }
+}
