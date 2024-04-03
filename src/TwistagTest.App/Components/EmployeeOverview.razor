@@ -23,21 +23,3 @@ else
         }
     </div>
 }
-
-
-@code {
-    [Inject]
-    public IEmployeeDataService? employeeDataService { get; set; }
-    public List<Employee>? Employees { get; set; } = default!;
-    private Employee? _selectedEmployee;
-
-    protected override async Task OnInitializedAsync()
-    {
-        Employees = (await employeeDataService?.GetAllEmployees()).ToList();
-    }
-
-    public void ShowQuickViewPopup(Employee selectedEmployee)
-    {
-        _selectedEmployee = selectedEmployee;
-    }
-}
