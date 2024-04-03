@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TwistagTest.Shared\TwistagTest.Shared.csproj" />
     <ProjectReference Include="..\TwistagTest.Business\TwistagTest.Business.csproj" />
     <ProjectReference Include="..\TwistagTest.Data\TwistagTest.Data.csproj" />
   </ItemGroup>

@@ -1,4 +1,5 @@
-﻿using TwistagTest.Shared.Models;
+﻿
+using TwistagTest.Shared.Models;
 
 namespace TwistagTest.Business.Interfaces
 {

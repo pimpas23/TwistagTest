@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TwistagTest.Shared\TwistagTest.Shared.csproj" />
+    <ProjectReference Include="..\TwistagTest.Shared\TwistagTest.Shared.csproj" />
   </ItemGroup>
 
 </Project>
