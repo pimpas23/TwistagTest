@@ -1,9 +1,16 @@
 using TwistagTest.App.Components;
+using TwistagTest.App.Implementation;
+using TwistagTest.App.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents();
+
+builder.Services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7219");
+});
 
 var app = builder.Build();
 

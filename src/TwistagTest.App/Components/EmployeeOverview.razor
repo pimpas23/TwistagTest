@@ -1,0 +1,43 @@
+﻿@page "/employeeoverview"
+@using TwistagTest.App.Models
+@using TwistagTest.App.Services
+@using TwistagTest.Shared.Models
+
+<h2>Employee Overview</h2>
+
+@if(Employees == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <QuickViewPopup Employee="_selectedEmployee"></QuickViewPopup>
+    <div class="row">
+        @foreach (var employee in Employees)
+        {
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                <ChildContent>
+                    <EmployeeCard Employee="employee" EmployeeQuickViewClicked="ShowQuickViewPopup"></EmployeeCard>
+                </ChildContent>
+            </div>
+        }
+    </div>
+}
+
+
+@code {
+    [Inject]
+    public IEmployeeDataService? employeeDataService { get; set; }
+    public List<Employee>? Employees { get; set; } = default!;
+    private Employee? _selectedEmployee;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Employees = (await employeeDataService?.GetAllEmployees()).ToList();
+    }
+
+    public void ShowQuickViewPopup(Employee selectedEmployee)
+    {
+        _selectedEmployee = selectedEmployee;
+    }
+}
