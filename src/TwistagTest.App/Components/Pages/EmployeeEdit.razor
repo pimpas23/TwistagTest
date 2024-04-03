@@ -1,0 +1,91 @@
+﻿@page "/employeeedit"
+@page "/employeeedit/{Id}"
+@using TwistagTest.Shared.Models;
+@using static Microsoft.AspNetCore.Components.Web.RenderMode
+
+
+@if (!Saved)
+{
+    <section class="employee-edit">
+        <h1 class="page-title">Details for @_Employee.FirstName @_Employee.LastName</h1>
+        <EditForm Model="@_Employee" FormName="employee-edit" OnValidSubmit="@HandleValidSubmit"
+                  OnInvalidSubmit="@HandleInvalidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <div class="row mb-3">
+                <label for="lastName" class="col-form-label col-md-3">Last name: </label>
+                <div class="col-md-8">
+                    <InputText id="lastName" @bind-Value:event="oninput" @bind-Value="@_Employee.LastName" class="form-control col-md-8" placeholder="Enter last name"></InputText>
+                </div>
+                <ValidationMessage class="offset-md-3 col-md-8" For="@(() => _Employee.LastName)" />
+
+            </div>
+
+            <div class="row mb-3">
+                <label for="firstName" class="col-form-label col-md-3">First name: </label>
+                <div class="col-md-8">
+                    <InputText id="firstName" @bind-Value:event="oninput" class="form-control col-md-8" @bind-Value="@_Employee.FirstName" placeholder="Enter first name"></InputText>
+                </div>
+                <ValidationMessage class="offset-md-3 col-md-8" For="@(() => _Employee.FirstName)" />
+            </div>
+
+            <div class="row mb-3">
+                <label for="birthdate" class="col-form-label col-md-3">Birthdate: </label>
+                <div class="col-md-8">
+                    <InputDate id="birthdate" class="form-control col-md-8" @bind-Value="@_Employee.BirthDate" placeholder="Enter birthdate"></InputDate>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="email" class="col-form-label col-md-3">Email: </label>
+                <div class="col-md-8">
+                    <InputText id="email" class="form-control col-md-8" @bind-Value="@_Employee.Email" placeholder="Enter email"></InputText>
+                </div>
+                <ValidationMessage class="offset-md-3 col-md-8" For="@(() => _Employee.Email)" />
+            </div>
+
+            <div class="row mb-3">
+                <label for="phonenumber" class="col-form-label col-md-3">Phone number: </label>
+                <div class="col-md-8">
+                    <InputText id="phonenumber" class="form-control col-md-8" @bind-Value="@_Employee.PhoneNumber" placeholder="Enter phone number"></InputText>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="joineddate" class="col-form-label col-md-3">Joined on: </label>
+                <div class="col-md-8">
+                    <InputDate id="joineddate" class="form-control" @bind-Value="@_Employee.JoinedDate" placeholder="Enter date joined"></InputDate>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="exitdate" class="col-form-label col-md-3">Left on: </label>
+                <div class="col-md-8">
+                    <InputDate id="exitdate" class="form-control" @bind-Value="@_Employee.ExitDate" placeholder="Enter exit date"></InputDate>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-1">Save employee</button>
+        
+            <button type="button" class="btn btn-danger my-1" @onclick="(()=> DeleteEmployee(_Employee.Id))">
+        Delete
+        </button>
+        
+        <button type="button" class="btn btn-outline-primary" onclick="@NavigateToOverview">Back to overview</button>
+            <script>
+                window.preventFormSubmission = () => {
+                    document.getElementById('employee-edit').addEventListener('submit', async (event) => {
+                        event.preventDefault(); // Prevent default form submission
+                        // Your async submission logic here
+                        await DotNet.invokeMethodAsync('TwistagTest.App', 'HandleFormSubmission');
+                    });
+                };
+            </script>
+        </EditForm>
+    </section>
+}
+else
+{
+    <div class="alert @StatusClass">@Message</div>
+    <button type="button" class="btn btn-outline-primary ms-1" onclick="@NavigateToOverview">Back to overview</button>
+}

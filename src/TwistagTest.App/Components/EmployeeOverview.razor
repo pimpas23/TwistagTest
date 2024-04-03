@@ -1,5 +1,6 @@
 ﻿@page "/employeeoverview"
 @using TwistagTest.App.Models
+@using TwistagTest.App.Services
 @using TwistagTest.Shared.Models
 
 <h2>Employee Overview</h2>
@@ -25,17 +26,18 @@ else
 
 
 @code {
+    [Inject]
+    public IEmployeeDataService? employeeDataService { get; set; }
     public List<Employee>? Employees { get; set; } = default!;
     private Employee? _selectedEmployee;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        Employees = MockDataService.Employees;
+        Employees = (await employeeDataService?.GetAllEmployees()).ToList();
     }
 
     public void ShowQuickViewPopup(Employee selectedEmployee)
     {
         _selectedEmployee = selectedEmployee;
-        Console.WriteLine($"ShowQuickViewPopup + {_selectedEmployee.FirstName}");
     }
 }
