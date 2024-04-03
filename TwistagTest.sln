@@ -13,10 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistagTest.Api", "src\Twis
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwistagTest.Shared", "src\TwistagTest.Shared\TwistagTest.Shared.csproj", "{344483AD-68C6-4FB0-ABE3-D66AFA2DC4D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistagTest.Blazor", "src\TwistagTest.Blazor\TwistagTest.Blazor\TwistagTest.Blazor.csproj", "{3D8A6CF7-0717-4F33-BAF2-C32E6F18207F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwistagTest.Blazor.Client", "src\TwistagTest.Blazor\TwistagTest.Blazor.Client\TwistagTest.Blazor.Client.csproj", "{6ED0EFA6-1583-4900-8F30-B2ABF25A7715}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,14 +39,6 @@ Global
 		{344483AD-68C6-4FB0-ABE3-D66AFA2DC4D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{344483AD-68C6-4FB0-ABE3-D66AFA2DC4D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{344483AD-68C6-4FB0-ABE3-D66AFA2DC4D2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D8A6CF7-0717-4F33-BAF2-C32E6F18207F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D8A6CF7-0717-4F33-BAF2-C32E6F18207F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D8A6CF7-0717-4F33-BAF2-C32E6F18207F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D8A6CF7-0717-4F33-BAF2-C32E6F18207F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6ED0EFA6-1583-4900-8F30-B2ABF25A7715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6ED0EFA6-1583-4900-8F30-B2ABF25A7715}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6ED0EFA6-1583-4900-8F30-B2ABF25A7715}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6ED0EFA6-1583-4900-8F30-B2ABF25A7715}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
