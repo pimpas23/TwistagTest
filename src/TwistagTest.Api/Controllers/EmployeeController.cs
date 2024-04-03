@@ -59,13 +59,6 @@ namespace TwistagTest.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var employee = await _employeeService.Get(id);
-
-            if (employee == null)
-            {
-                return NotFound();
-            }
-
             await _employeeService.Delete(id);
 
             return NoContent();

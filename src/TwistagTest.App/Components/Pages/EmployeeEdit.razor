@@ -1,15 +1,13 @@
 ﻿@page "/employeeedit"
 @page "/employeeedit/{Id}"
 @using TwistagTest.Shared.Models;
-@using static Microsoft.AspNetCore.Components.Web.RenderMode
-
 
 @if (!Saved)
 {
     <section class="employee-edit">
         <h1 class="page-title">Details for @_Employee.FirstName @_Employee.LastName</h1>
         <EditForm Model="@_Employee" FormName="employee-edit" OnValidSubmit="@HandleValidSubmit"
-                  OnInvalidSubmit="@HandleInvalidSubmit">
+                  OnInvalidSubmit="@HandleInvalidSubmit" form=POST>
             <DataAnnotationsValidator />
             <ValidationSummary />
             <div class="row mb-3">

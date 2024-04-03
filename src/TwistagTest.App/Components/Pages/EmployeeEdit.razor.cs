@@ -38,6 +38,19 @@ namespace TwistagTest.App.Components.Pages
                 }
             }
         }
+        protected async override Task OnInitializedAsync()
+        {
+            Guid.TryParse(Id, out Guid id);
+            if (id != Guid.Empty)
+            {
+                _Employee = await EmployeeDataService.GetEmployeeDetails(id);
+            }
+            else
+            {
+                _Employee = new Employee { FirstName = "john", LastName = "doe", Email = "johndoe@gmail.com", BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+            }
+
+        }
 
         protected async Task HandleInvalidSubmit()
         {
